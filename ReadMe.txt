@@ -1,4 +1,4 @@
-# **Bank Management System**
+# ** Simple Secure Bank Management System**
 
 A Django-based web application for managing bank accounts, transactions, and users. This project provides functionalities for deposits, withdrawals, money transfers, and transaction history tracking, offering a simple and secure banking solution.
 
@@ -15,6 +15,65 @@ A Django-based web application for managing bank accounts, transactions, and use
 
 ---
 
+## **File Structure **
+simpleSecureBank
++---bankVenv
+ª   +---Scripts
+ª   ª   ª  activate (The file to activate the virtual environment)
++---base
+ª   +---migrations (Database models created by Django)
+ª   ª   ª   0001_initial.py
+ª   ª   ª   0002_account_transactions_alter_customers_custid.py
+ª   ª   ª   0003_rename_customers_customer_and_more.py
+ª   ª   ª   0004_account_amount_transaction_trans_amount.py
+ª   ª   ª   0005_alter_customer_custid.py
+ª   ª   ª   0006_alter_customer_name.py
+ª   ª   ª   0007_alter_customer_password.py
+ª   ª   ª   0008_delete_transaction_account_name.py
+ª   ª   ª   0009_remove_customer_created_remove_customer_custid.py
+ª   ª   ª   0010_remove_customer_name_remove_customer_password.py
+ª   ª   ª   0011_customer_name_customer_password.py
+ª   ª   ª   0012_customer_created_customer_custid.py
+ª   ª   ª   0013_transaction.py
+ª   ª   ª   0014_alter_transaction_custid.py
+ª   ª   ª   __init__.py
+ª   ª   ª
+
+ª   ª   admin.py
+ª   ª   apps.py
+ª   ª   forms.py
+ª   ª   models.py
+ª   ª   tests.py
+ª   ª   urls.py (Links for all site)
+ª   ª   views.py (main functions call)
+ª   ª   __init__.py
++---patelbank
+ª   ª   asgi.py
+ª   ª   settings.py (Setting up the secure base)
+ª   ª   test
+ª   ª   urls.py
+ª   ª   wsgi.py
+ª   ª   __init__.py
++---templates (All HTML CSS and JS code to view the site)
+ª   ª   default.html
+ª   ª   home.html
+ª   ª   login.html
+ª   ª   signout.html
+ª   ª   signup.html
+ª   ª   zelle.html
+
+ª   .gitattributes
+ª   .gitignore
+ª   bandit-report.html (the result of the bandit report conducted)
+ª   bandit-report.txt
+ª   db.sqlite3
+ª   manage.py (the main file to run)
+ª   ReadMe.txt
+ª   Test.txt.txt
+ª   tree.txt
+
+---
+
 ## **Introduction**
 
 The **Bank Management System** is a web-based application built using Django that simplifies banking operations. It is ideal for small-scale banking solutions or as a learning project for those interested in web development and database management using Python Django Framework. 
@@ -28,7 +87,7 @@ The **Bank Management System** is a web-based application built using Django tha
 
 ## **Technologies Used**
 - **Backend**: Python, Django
-- **Frontend**: Javascript, HTML, CSS
+- **Frontend**: Javascript, HTML, CSS, JavaScript
 - **Database**: SQLite (default)
 - **Authentication**: Django Authentication System
 
@@ -84,17 +143,17 @@ Ensure you have the following installed on your system:
 
 6. Start the server:
    ```bash
-   python manage.py runserver
+   python manage.py runserver 8080
    ```
 
-7. Access the application at `http://127.0.0.1:8000/`.
+7. Access the application at `http://127.0.0.1:8080/`.
 
 ---
 
 ## **Usage**
 
 1. **Admin Access**:
-   - Log in as a superuser at `http://127.0.0.1:8000/admin/`.
+   - Log in as a superuser at `http://127.0.0.1:8080/value-admin/`.
    - Manage users, accounts, and transactions.
 
 2. **User Operations**:
@@ -108,6 +167,21 @@ Ensure you have the following installed on your system:
    - Enter the recipient's name and the amount to transfer.
    - Confirm the transaction.
 
+---
+
+Security Improvements
+- Created a better function to use stronger passwords for login (pre-used validators didnt work as they only work on DJANGO forms and this was HTML CSS forms).
+- Changed the path for admin to value-admin for secure access
+- Handled code to make it more clear from UI point of view.
+- Made the webpage more secure from man in the middle attacks, XSS attacks, and http redirection.
 
 ---
 
+Testing Process
+
+Used bandit tool to understand what can be done better with security point of view. Tried using SonarQube but the installation process didnt happen correctly.
+
+---
+
+Contribution and References
+-
